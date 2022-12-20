@@ -10,7 +10,7 @@
 <body>
     <header class="section">
         <nav id="navbar">
-            <a class="navbar-main" href="#">SGuzmanR</a>
+            <a class="navbar-title" href="#"><img src="assets/img/nav-img.png" alt="icon navbar">SGuzmanR</a>
             <ul class="navbar-list">
                 <li>
                     <a class="navbar-list_link" href="#about">Sobre mi</a>
@@ -44,16 +44,16 @@
                     <div id="social-media">
                         <ul class="social-media_list">
                             <li class="social-media_item">
-                                <a class="social-media_link" href="#">Github <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
+                                <a class="social-media_link" href="#" target="_blank">Github <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
                             </li>
                             <li class="social-media_item">
-                                <a class="social-media_link" href="#">Linkedin <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
+                                <a class="social-media_link" href="#" target="_blank">Linkedin <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
                             </li>
                             <li class="social-media_item">
-                                <a class="social-media_link" href="#">Artstation <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
+                                <a class="social-media_link" href="#" target="_blank">Artstation <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
                             </li>
                             <li class="social-media_item">
-                                <a class="social-media_link" href="#">Curriculo <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
+                                <a class="social-media_link" href="#" target="_blank">Curriculo <img class="arrow" src="assets/img/black-arrow.png" alt="arrow"></a>
                             </li>
                         </ul>
                     </div>
@@ -63,7 +63,7 @@
 
         <section id="about">
             <div id="about-main" class="section">
-                <h1 class="title">Sobre mi</h1>
+                <h1>Sobre mi</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum, optio. Laudantium iure veritatis maxime praesentium, aperiam nihil temporibus placeat repellat facilis quo tempora consectetur. Itaque atque earum natus laborum velit!</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, distinctio vel obcaecati ratione illo fugiat nulla mollitia. Quo, doloribus tempora id quidem, voluptate pariatur optio magnam commodi possimus unde repellat.</p>
                 <img src="assets/img/sign.png" alt="Sign">
@@ -107,28 +107,28 @@
                 <div class="container">
                     <ul class="personal-list">
                         <li class="personal-item">
-                            <img src="assets/img/html.png" alt="html">
-                            <span>HTML 5</span>
+                            <img src="assets/img/skate.png" alt="skate">
+                            <span>Skate</span>
                         </li>
                         <li class="personal-item">
-                            <img src="assets/img/js.png" alt="js">
-                            <span>JavaScript</span>
+                            <img src="assets/img/guitar.png" alt="guitar">
+                            <span>Tocar guitarra</span>
                         </li>
                         <li class="personal-item">
-                            <img src="assets/img/php.png" alt="php">
-                            <span>PHP</span>
+                            <img src="assets/img/music.png" alt="music">
+                            <span>Oir musica</span>
                         </li>
                         <li class="personal-item">
-                            <img src="assets/img/node.png" alt="node">
-                            <span>Node JS</span>
+                            <img src="assets/img/tv.png" alt="study">
+                            <span>Estudiar</span>
                         </li>
                         <li class="personal-item">
-                            <img src="assets/img/react.png" alt="react">
-                            <span>React</span>
+                            <img src="assets/img/cook.png" alt="cook">
+                            <span>Cocinar</span>
                         </li>
                         <li class="personal-item">
-                            <img src="assets/img/css.png" alt="css">
-                            <span>CSS</span>
+                            <img src="assets/img/camera.png" alt="camera">
+                            <span>Tomar fotos</span>
                         </li>
                     </ul>
                 </div>
@@ -176,7 +176,7 @@
                                 </div>  
                             </div>
                         </li>
-                        <li class="work-item">
+                        <li class="work-item change">
                             <img src="assets/img/exp2.png" alt="exp2">
                             <div class="work-item_text">
                                 <h1>Encriptador de texto</h1>
@@ -199,7 +199,7 @@
                                 </div> 
                             </div>
                         </li>
-                        <li class="work-item">
+                        <li class="work-item change">
                             <img src="assets/img/exp4.png" alt="exp4">
                             <div class="work-item_text">
                                 <h1>Encriptador de texto</h1>
@@ -225,15 +225,15 @@
                     <p>¿Quieres contactarme? <br> Complete el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
                 </div>
                 
-                <form id="form" class="form">
+                <form action="" class="form" id="form">
                     <!--Nombre-->
                     <div class="form_grupo" id="grupo_nombre">
                         <label for="nombre" class="form_label">Nombre</label>
                         <div class="form_grupo-input">
-                            <input type="text" class="form_input" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+                            <input type="text" class="form_input" name="nombre" id="nombre" placeholder="John Doe">
                             <i class="form_validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="form_input-error">Error</p>
+                        <p class="form_input-error">Por favor complete este campo.</p>
                     </div>
         
                     <!--Correo Electronico-->
@@ -245,15 +245,31 @@
                         </div>
                         <p class="form_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                     </div>
-        
-                    <div class="form_mensaje" id="form_mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+
+                    <!--Asunto-->
+                    <div class="form_grupo" id="grupo_asunto">
+                        <label for="asunto" class="form_label">Asunto</label>
+                        <div class="form_grupo-input">
+                            <input type="text" class="form_input" name="asunto" id="asunto" placeholder="Escribe el Asunto">
+                            <i class="form_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="form_input-error">Por favor complete este campo (Max 40 caracteres).</p>
+                    </div>
+
+                    <!--Mensaje-->
+                    <div class="form_grupo" id="grupo_mensaje">
+                        <label for="mensaje" class="form_label">Mensaje</label>
+                        <div class="form_grupo-input">
+                            <textarea name="mensaje" id="mensaje" class="form_input" placeholder="Escriba su mensaje"></textarea>
+                            <i class="form_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="form_input-error">Por favor complete este campo (Max 300 caracteres).</p>
                     </div>
         
                     <div class="form_grupo form_grupo-btn-enviar">
-                        <button type="submit" class="form_btn">Enviar</button>
-                        <p class="form_mensaje-exito" id="form_mensaje-exito">Formulario enviado exitosamente!</p>
-                    </div>
+                        <button type="submit" class="form_btn">Enviar mensaje</button>
+                        <p class="form_mensaje-exito" id="form_mensaje-exito">Enviado exitosamente!</p>
+                    </div>  
                 </form>
             </div>
         </div>
@@ -264,7 +280,7 @@
     </footer>
     
     <!--Script Code-->
-    <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>

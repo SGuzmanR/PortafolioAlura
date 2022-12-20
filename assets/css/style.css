@@ -6,6 +6,8 @@
 :root {
     --body-font: 'Raleway', sans-serif;
     --blue-color: #2A7AE4;
+    --green-color: #1ed12d;
+    --red-color: #bb2929;
     --grey-color: #464646;
     --light-blue-color: #EAF2FD;
     --black-color: #000;
@@ -50,6 +52,12 @@ input {
     outline: none;
 }
 
+textarea {
+    outline: none;
+    resize: none;
+    border: none;
+}
+
 
 /*--REUSABLE--*/
 .section {
@@ -71,18 +79,38 @@ header {
 
 #navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
 }
 
-.navbar-main {
-    color: var(--black-color);
-    font-weight: bold;
-    font-size: 1rem;
+.navbar-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--grey-color);
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.navbar-title img {
+    width: 24px;
 }
 
 .navbar-list {
     display: none;
+}
+
+.navbar-list_link {
+    color: var(--grey-color);
+}
+
+.navbar-address {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .8em;
 }
 
 
@@ -91,7 +119,7 @@ main {
     width: 100%;
 }
 
-/*INTRO*/
+/*--INTRO--*/
 #intro {
     padding: 1rem 0;
 }
@@ -113,14 +141,9 @@ main {
     gap: 1rem;
 }
 
-#social-media {
-    width: 100%;
-}
-
 .social-media_list {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 8px;
 }
 
@@ -129,7 +152,6 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
 }
 
 .social-media_link {
@@ -137,13 +159,17 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    font-weight: 700;
+    color: var(--grey-color);
+    gap: 5px;
 }
 
 .arrow {
     width: 16px;
 }
 
-/*ABOUT*/
+
+/*--ABOUT--*/
 #about {
     width: 100%;
     padding: 1rem 0;
@@ -166,7 +192,7 @@ main {
     padding: 1rem 0;
 }
 
-/*SKILLS*/
+/*--SKILLS--*/
 #skills-main {
     display: flex;
     flex-direction: column;
@@ -193,8 +219,12 @@ main {
     gap: 8px;
     padding: 1rem;
     width: auto;
-    height: 118px;
+    height: 150px;
     background-color: var(--white-color);
+}
+
+.personal-item span {
+    font-weight: 700;
 }
 
 #hobbies-main {
@@ -254,17 +284,19 @@ main {
 
 .work-item {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 1rem;
 }
 
 .work-item img {
-    width: auto;
+    width: 100%;
 }
 
 .work-item_text {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 8px;
 }
 
@@ -299,7 +331,7 @@ main {
     font-weight: 600;
     color: var(--white-color);
     background-color: var(--blue-color);
-}
+} 
 
 
 /*--CONTACT--*/
@@ -342,17 +374,17 @@ main {
 
 /*--FORM--*/
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	display: flex;
+	flex-direction: column;
+    gap: 1rem;
 }
 
 .form_label {
 	display: block;
-	font-weight: 700;
-	padding: 10px;
-	cursor: pointer;
     font-family: var(--body-font);
+    font-size: 1em;
+	font-weight: 700;
+    margin-bottom: .2rem;
 }
 
 .form_grupo-input {
@@ -361,25 +393,31 @@ main {
 
 .form_input {
 	width: 100%;
-	background: #fff;
-	border: 3px solid transparent;
+	background: var(--white-color);
 	border-radius: 3px;
-	height: 45px;
-	line-height: 45px;
-	padding: 0 40px 0 10px;
+	height: 2.5rem;
+	padding: 0 2rem 0 1rem;
 	transition: .3s ease all;
     font-family: var(--body-font);
 }
 
+#mensaje {
+    font-family: var(--body-font);
+    width: 100%;
+	background: var(--white-color);
+	border-radius: 3px;
+	height: 15rem;
+	padding: 1rem 1rem;
+}
+
 .form_input:focus {
-	border: 3px solid #0075FF;
+	border: 1px solid var(--blue-color);
 	outline: none;
-	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
 
 .form_input-error {
-	font-size: 12px;
-	margin-bottom: 0;
+    margin-top: 5px;
+	font-size: 10px;
 	display: none;
 }
 
@@ -396,31 +434,12 @@ main {
 	opacity: 0;
 }
 
-.form_checkbox {
-	margin-right: 10px;
-}
-
-.form_grupo-terminos, 
-.form_mensaje,
 .form_grupo-btn-enviar {
 	grid-column: span 2;
 }
 
-.form_mensaje {
-	height: 45px;
-	line-height: 45px;
-	background: #F66060;
-	padding: 0 15px;
-	border-radius: 3px;
-	display: none;
-}
-
 .form_mensaje-activo {
 	display: block;
-}
-
-.form_mensaje p {
-	margin: 0;
 }
 
 .form_grupo-btn-enviar {
@@ -430,19 +449,20 @@ main {
 }
 
 .form_btn {
-	padding: 1rem 2rem;
+    padding: 1rem 2rem;
 	background: var(--blue-color);
 	color: var(--white-color);
-    font-weight: 700;
-    font-family: var(--body-font);
+	font-weight: 700;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
+	transition: .1s ease all;
 }
 
 .form_mensaje-exito {
-	font-size: 14px;
-	color: #119200;
+    margin-top: 10px;
+	font-size: .8em;
+	color: var(--green-color);
 	display: none;
 }
 
@@ -451,21 +471,21 @@ main {
 }
 
 .form_grupo-correcto .form_validacion-estado {
-	color: #1ed12d;
+	color: var(--green-color);
 	opacity: 1;
 }
 
 .form_grupo-incorrecto .form_label {
-	color: #bb2929;
+	color: var(--red-color);
 }
 
 .form_grupo-incorrecto .form_validacion-estado {
-	color: #bb2929;
+	color: var(--red-color);
 	opacity: 1;
 }
 
 .form_grupo-incorrecto .form_input {
-	border: 3px solid #bb2929;
+	border: 1px solid var(--red-color);
 }
 
 
@@ -482,4 +502,411 @@ footer p {
     font-size: 16px;
     font-weight: 500;
     font-family: var(--body-font);
+}
+
+
+/*--MEDIA QUERIES--*/
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    /*--NAVBAR--*/
+    .navbar-title {
+        font-size: 1rem;
+    }
+    
+    .navbar-address {
+        font-size: 1em;
+    }
+
+    /*--INTRO--*/
+    .social-media_list {
+        flex-direction: row;
+    }
+
+    .social-media_item {
+        flex-direction: row;
+    }
+
+    /*--ABOUT--*/
+    #about-main h1 {
+        text-align: start;
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    /*--REUSABLE--*/
+    .section {
+        margin: 0 2rem;
+    }
+
+    /*--INTRO--*/
+    #intro {
+        padding: 2rem 0;
+    }
+
+    #intro-main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 2rem;
+    }
+
+    .intro-img {
+        width: 146px;
+    }
+
+    .social-media_list {
+        flex-direction: row;
+    }
+
+    .social-media_item {
+        flex-direction: row;
+    }
+
+    .social-media_link {
+        font-size: 16px;
+    }
+
+    .arrow {
+        width: 24px;
+    }
+
+    /*--ABOUT--*/
+    #about {
+        padding: 2rem 0;
+    }
+
+    #about-main h1 {
+        text-align: start;
+        font-size: 22px;
+    }
+
+    /*--PERSONAL--*/
+    #personal {
+        padding: 2rem 0;
+    }
+
+    /*--SKILLS--*/
+    .personal-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    #hobbies-main {
+        padding-top: 2rem;
+    }
+
+    /*--STUDY--*/
+    .study-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .study-item img {
+        width: 100%;
+    }
+
+    .study-item h2 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .study-item p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    /*--REUSABLE--*/
+    .section {
+        margin: 0 152px;
+    }
+
+    /*--NAVBAR--*/
+    .navbar-title {
+        font-size: 1rem;
+    }
+    
+    .navbar-address {
+        font-size: 1em;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .navbar-list_link {
+        font-size: .8em;
+        color: var(--grey-color);
+    }
+
+    .navbar-list_link:hover {
+        color: var(--blue-color);
+    }
+
+    /*--INTRO--*/
+    #intro {
+        padding: 2rem 0;
+    }
+
+    #intro-main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 2.2rem;
+    }
+
+    .intro-img {
+        width: 200px;
+    }  
+
+    .intro-container h1 {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .intro-container p {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .social-media_list {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .social-media_item {
+        flex-direction: row;
+    }
+
+    .social-media_link {
+        font-size: 16px;
+    }
+
+    .arrow {
+        width: 24px;
+    }
+
+    /*--ABOUT--*/
+    #about {
+        padding: 2rem 0;
+    }
+
+    /*--PERSONAL--*/
+    #personal {
+        padding: 2rem 0;
+    }
+
+    /*--SKILLS--*/
+    .personal-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    #hobbies-main {
+        padding-top: 2rem;
+    }
+
+    /*--STUDY--*/
+    .study-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .study-item img {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .study-item h2 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .study-item p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /*--CONTACT--*/
+    #contact {
+        padding: 2rem 0;
+    }
+
+    #contact-main {
+        margin: 0 152px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    /*--REUSABLE--*/
+    .section {
+        margin: 0 152px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    /*--NAVBAR--*/
+    .navbar-title {
+        font-size: 1.2em;
+    }
+    
+    .navbar-address {
+        font-size: 1.2em;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .navbar-list_link {
+        font-size: 1em;
+        color: var(--grey-color);
+    }
+
+    .navbar-list_link:hover {
+        color: var(--blue-color);
+    }
+
+    /*--INTRO--*/
+    #intro {
+        padding: 2rem 0;
+    }
+
+    #intro-main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 2.2rem;
+    }
+
+    .intro-img {
+        width: 100%;
+    }  
+
+    .intro-container h1 {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .intro-container p {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .social-media_list {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .social-media_item {
+        flex-direction: row;
+    }
+
+    .social-media_link {
+        font-size: 16px;
+    }
+
+    .arrow {
+        width: 24px;
+    }
+
+    /*--ABOUT--*/
+    #about {
+        padding: 2rem 0;
+    }
+
+    /*--PERSONAL--*/
+    #personal {
+        padding: 2rem 0;
+    }
+
+    /*--SKILLS--*/
+    .personal-list {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+
+    #hobbies-main {
+        padding-top: 2rem;
+    }
+
+    /*--STUDY--*/
+    .study-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .study-item img {
+        width: 100%;
+    }
+
+    .study-item h2 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .study-item p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /*--WORK--*/
+    .work-item {
+        flex-direction: row;
+    }
+
+    .work-item_text h1 {
+        font-size: 16px;
+        font-weight: 700
+    }
+
+    .work-item_text p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .change {
+        flex-direction: row-reverse;
+    }
+
+    /*--CONTACT--*/
+    #contact {
+        padding: 3rem 0;
+        width: 100%;
+    }
+
+    #contact-main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0 152px;
+    }
+
+    #contact-main img {
+        display: flex;
+        width: auto;
+        height: 100%;
+    }
+
+    /*--FORM--*/
+    #mensaje {
+	    height: 11rem;
+    }
 }

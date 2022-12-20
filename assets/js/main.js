@@ -1,24 +1,35 @@
 const form = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input');
+const textAreas = document.querySelectorAll('#form textarea')
 
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	asunto: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+	mensaje: /^[a-zA-ZÀ-ÿ\s]{1,300}$/
 }
 
 const campos = {
 	nombre: false,
-	correo: false
+	correo: false,
+	asunto: false,
+	mensaje: false
 }
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
-		break;
+			break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
-		break;
+			break;
+		case "asunto":
+			validarCampo(expresiones.asunto, e.target, 'asunto');
+			break;
+		case "mensaje":
+			validarCampo(expresiones.mensaje, e.target, 'mensaje');
+			break;
 	}
 }
 
@@ -52,13 +63,20 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
+textAreas.forEach((textarea) => {
+	textarea.addEventListener('keyup', validarFormulario);
+	textarea.addEventListener('blur', validarFormulario);
+});
+
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	if(campos.nombre && campos.correo){
+	if(campos.nombre && campos.correo && campos.asunto && campos.mensaje ){
 		form.reset();
 
 		document.getElementById('form_mensaje-exito').classList.add('form_mensaje-exito-activo');
+
 		setTimeout(() => {
 			document.getElementById('form_mensaje-exito').classList.remove('form_mensaje-exito-activo');
 		}, 5000);
